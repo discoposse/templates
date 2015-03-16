@@ -1,0 +1,48 @@
+#!/bin/bash
+
+###############################################################################
+# WHAT DOES IT DO
+#
+# Usage:
+#
+#  ./xxx.sh [OPT]
+#
+# Examples:
+#  
+#  $ ./xxx.sh 127.0.0.1
+#
+# Author: Michael Hausenblas
+# Init: YYYY-MM-DD
+
+
+set -e # exit on error immediately, just to keep things sane
+
+
+###############################################################################
+# Global variables
+
+SCRIPT_PATH=`dirname $0`
+
+TARGET_DIR=${1:-"/tmp"}
+
+INLINE_VAR=$(cat <<EOF
+a
+b
+c
+1
+2
+3
+EOF
+)
+
+pushd $TARGET_DIR # remember where we started and change into target dir
+
+echo Starting with $TARGET_DIR
+
+# MAIN LOGIC HERE
+
+echo DONE
+
+popd # restore and change back to where we started
+
+exit 0
