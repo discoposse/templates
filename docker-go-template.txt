@@ -1,0 +1,5 @@
+FROM scratch
+MAINTAINER Michael Hausenblas <michael@dcos.io>
+ADD whatever whatever
+EXPOSE 80
+ENTRYPOINT ["/whatever"]
